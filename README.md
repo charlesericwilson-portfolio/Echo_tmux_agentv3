@@ -33,4 +33,4 @@ Echo_tmux_agent is currently testing.
 
 Previous builds [Echo_agentv1-2](https://github.com/charlesericwilson-portfolio/Echo_agent1-2)
 
-Builds in progress [Echo agent proxyv4](https://github.com/charlesericwilson-portfolio/Echo_agent_proxyv4), [Echo Rust Agent Proxy](https://github.com/charlesericwilson-portfolio/Echo_rust_agent_proxyv5/tree/main)
+Builds in progress [Echo agent proxyv4](https://github.com/charlesericwilson-portfolio/Echo_agent_proxyv4), [Echo Rust Agent Proxyv5](https://github.com/charlesericwilson-portfolio/Echo_rust_agent_proxyv5/tree/main)
