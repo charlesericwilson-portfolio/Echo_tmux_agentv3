@@ -10,8 +10,7 @@ A lightweight Rust wrapper that turns a local LLM (currently "Echo") into a capa
 - Basic safety filtering for dangerous commands
 - Clean chat output
 - Currently building datasets and testing
-- Build details in [progress_log.md](https://github.com/charlesericwilson-portfolio/Echo_tmux/blob/main/echo_tmux/Doc/progress_log.md)
-- Screenshots [Basic command execution and output](https://github.com/charlesericwilson-portfolio/Echo_tmux/tree/main/echo_tmux/screenshots)
+- Build details and screenshots in [progress_log.md](https://github.com/charlesericwilson-portfolio/Echo_tmux/blob/main/echo_tmux/Doc/progress_log.md)
 
 ### Quick Start
 
@@ -36,4 +35,4 @@ Previous builds [Echo_agentv1-2](https://github.com/charlesericwilson-portfolio/
 Builds in progress [Echo agent proxyv4](https://github.com/charlesericwilson-portfolio/Echo_agent_proxyv4), [Echo Rust Agent Proxyv5](https://github.com/charlesericwilson-portfolio/Echo_rust_agent_proxyv5/tree/main)
 
 ## Status April 11, 2026
-This repo has had 107 unique cloners. Next steps focusing on v4 and v5.
+This repo has had 121 unique cloners. Next steps focusing on v4 and v5.
