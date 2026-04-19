@@ -1,14 +1,13 @@
 // commands.rs
+
+/// Extract SESSION:NAME command
 pub fn extract_session_command(response_text: &str) -> Option<(String, String)> {
     for line in response_text.lines() {
         let line = line.trim();
         if let Some(rest) = line.strip_prefix("SESSION:") {
             let rest = rest.trim();
-            if let Some((session_name, command)) = rest.split_once(' ') {
-                return Some((
-                    session_name.trim().to_string(),
-                    command.trim().to_string(),
-                ));
+            if let Some((name, cmd)) = rest.split_once(' ') {
+                return Some((name.trim().to_string(), cmd.trim().to_string()));
             } else if !rest.is_empty() {
                 return Some((rest.to_string(), String::new()));
             }
@@ -17,20 +16,18 @@ pub fn extract_session_command(response_text: &str) -> Option<(String, String)> 
     None
 }
 
-pub fn extract_run_command(response_text: &str) -> Option<(String, String)> {
+/// Extract COMMAND:
+pub fn extract_command(response_text: &str) -> Option<String> {
     for line in response_text.lines() {
         let line = line.trim();
-        if let Some(rest) = line.strip_prefix("TOOL_NAME: RUN") {
-            let rest = rest.trim();
-            if let Some(session_name) = rest.split_whitespace().next() {
-                let command = rest.replacen(session_name, "", 1).trim().to_string();
-                return Some((session_name.to_string(), format!("run {}", command)));
-            }
+        if let Some(cmd) = line.strip_prefix("COMMAND:") {
+            return Some(cmd.trim().to_string());
         }
     }
     None
 }
 
+/// Extract END_SESSION:
 pub fn extract_end_command(response_text: &str) -> Option<String> {
     for line in response_text.lines() {
         let line = line.trim();
@@ -41,11 +38,15 @@ pub fn extract_end_command(response_text: &str) -> Option<String> {
     None
 }
 
-pub fn extract_command(response_text: &str) -> Option<String> {
+/// Extract RUN command (if you still want to support this format)
+pub fn extract_run_command(response_text: &str) -> Option<(String, String)> {
     for line in response_text.lines() {
         let line = line.trim();
-        if let Some(cmd) = line.strip_prefix("COMMAND:") {
-            return Some(cmd.trim().to_string());
+        if let Some(rest) = line.strip_prefix("TOOL_NAME: RUN") {
+            let rest = rest.trim();
+            if let Some((name, cmd)) = rest.split_once(' ') {
+                return Some((name.to_string(), format!("run {}", cmd.trim())));
+            }
         }
     }
     None
