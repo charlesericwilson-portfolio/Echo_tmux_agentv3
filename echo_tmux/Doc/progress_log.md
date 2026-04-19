@@ -45,6 +45,19 @@ This log tracks the development of the Rust version of Echo tmux, starting from 
 - Removed "Sending request..." and "No further actions required." spam from chat.
 - Still some output noise on long-running commands (needs further testing).
 
+**Screenshots**
+- Simple ls -la
+[ls_-la](https://github.com/charlesericwilson-portfolio/Echo_rust_tmux_agentv3/blob/main/echo_tmux/screenshots/ls_-la.png)
+
+- Whoami
+[whoami](https://github.com/charlesericwilson-portfolio/Echo_rust_tmux_agentv3/blob/main/echo_tmux/screenshots/whoami.png)
+
+- Nmap
+[nmap](https://github.com/charlesericwilson-portfolio/Echo_rust_tmux_agentv3/blob/main/echo_tmux/screenshots/nmap.png)
+
+- Multiple commands
+[Multiple_commands](https://github.com/charlesericwilson-portfolio/Echo_rust_tmux_agentv3/blob/main/echo_tmux/screenshots/multiple_commands_shell.png)
+
 **Next Steps:**
 - Thoroughly test with long-running commands (e.g. `nmap`, `crackmapexec`, etc.) to verify waiting and clean output capture.
 - Decide whether to fully remove `COMMAND:` logic in favor of pure `SESSION:NAME` workflow.
